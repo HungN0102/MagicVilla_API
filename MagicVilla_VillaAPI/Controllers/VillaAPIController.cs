@@ -78,7 +78,7 @@ namespace MagicVilla_VillaAPI.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<APIResponse>> CreateVilla([FromBody]VillaCreateTO villaDTO)
+        public async Task<ActionResult<APIResponse>> CreateVilla([FromBody]VillaCreateDTO villaDTO)
         {
             try
             {
