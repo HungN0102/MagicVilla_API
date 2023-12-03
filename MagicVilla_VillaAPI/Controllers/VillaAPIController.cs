@@ -45,7 +45,7 @@ namespace MagicVilla_VillaAPI.Controllers
             return Ok(_response);
         }
 
-        [HttpGet("id:int", Name="GetVilla")]
+        [HttpGet("{id:int}", Name="GetVilla")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -111,7 +111,7 @@ namespace MagicVilla_VillaAPI.Controllers
             return Ok(_response);
         }
 
-        [HttpDelete("id:int", Name ="DeleteVilla")]
+        [HttpDelete("{id:int}", Name ="DeleteVilla")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -143,7 +143,7 @@ namespace MagicVilla_VillaAPI.Controllers
             return Ok(_response);
         }
 
-        [HttpPut("id:int", Name = "UpdateVilla")]
+        [HttpPut("{id:int}", Name = "UpdateVilla")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
