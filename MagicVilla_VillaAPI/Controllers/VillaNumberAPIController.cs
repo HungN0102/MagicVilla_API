@@ -92,12 +92,12 @@ namespace MagicVilla_VillaAPI.Controllers
             {
                 if (await _dbVillaNumber.GetAsync(u => u.VillaNo == createDTO.VillaNo) != null)
                 {
-                    ModelState.AddModelError("CustomError", "Villa already Exists");
+                    ModelState.AddModelError("ErrorMessages", "Villa Number already Exists");
                     return BadRequest(ModelState);
                 }
                 if(await _dbVilla.GetAsync(u=>u.Id == createDTO.VillaID) == null)
                 {
-                    ModelState.AddModelError("CustomError", "Villa Id is invalid");
+                    ModelState.AddModelError("ErrorMessages", "Villa Id is invalid");
                     return BadRequest(ModelState);
                 }
                 if (createDTO == null)
@@ -124,7 +124,7 @@ namespace MagicVilla_VillaAPI.Controllers
             return Ok(_response);
         }
 
-        [HttpDelete("id:int", Name ="DeleteVillaNumber")]
+        [HttpDelete("{id:int}", Name ="DeleteVillaNumber")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -156,7 +156,7 @@ namespace MagicVilla_VillaAPI.Controllers
             return Ok(_response);
         }
 
-        [HttpPut("id:int", Name = "UpdateVillaNumber")]
+        [HttpPut("{id:int}", Name = "UpdateVillaNumber")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
